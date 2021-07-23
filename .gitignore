@@ -24,3 +24,5 @@ hs_err_pid*
 .DS_Store
 calculadora-monolitica-server/suma.db
 calculadora-monolitica-server/multiplicacion.db
+
+result
