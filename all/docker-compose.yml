@@ -1,0 +1,24 @@
+version: "3.9"
+services: 
+    mongo: 
+        image: mongo
+        environment: 
+            - MONGO_INITDB_ROOT_USERNAME=admin
+            - MONGO_INITDB_ROOT_PASSWORD=${PASSWORD}
+        ports: 
+            - "27017:27017"
+
+    multiplicaciones:
+        build: ../service-multiplicacion/.
+        environment: 
+            - MONGO_SERVER=all_mongo_1
+        ports: 
+            - "8081:2000"
+
+    sumas:
+        build: ../service-suma/.
+        environment: 
+            - MONGO_SERVER=all_mongo_1
+        ports: 
+            - "8080:8080"
+            
