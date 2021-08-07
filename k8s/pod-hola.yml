@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: hola
+    type: app
+  name: hola
+spec:
+  containers:
+  - image: mavargasucreativa/python-service:2.0.0
+    name: hola
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

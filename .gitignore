@@ -26,3 +26,4 @@ calculadora-monolitica-server/suma.db
 calculadora-monolitica-server/multiplicacion.db
 
 result
+__pycache__

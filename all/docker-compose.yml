@@ -4,7 +4,7 @@ services:
         image: mongo
         environment: 
             - MONGO_INITDB_ROOT_USERNAME=admin
-            - MONGO_INITDB_ROOT_PASSWORD=${PASSWORD}
+            - MONGO_INITDB_ROOT_PASSWORD=mongo123
         ports: 
             - "27017:27017"
 

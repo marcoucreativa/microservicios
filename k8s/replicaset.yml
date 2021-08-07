@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: hola-replica
+  labels:
+     app: hola
+spec:
+  template:
+     metadata:
+       labels:
+         type: app
+       name: hola
+     spec:
+       containers:
+       - image: mavargasucreativa/python-service:2.0.0
+         name: hola
+  replicas: 4
+  selector: 
+    matchLabels: 
+       type: app
+      
+
