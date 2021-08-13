@@ -2,32 +2,30 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: hola-deployment
-  name: hola-deployment
+    app: otro-deployment
+  name: otro-deployment
 spec:
-  replicas: 1
+  replicas: 20
   selector:
     matchLabels:
-      app: hola-deployment
+      app: otro-deployment
   template:
     metadata:
       labels:
-        app: hola-deployment
+        app: otro-deployment
     spec:
       containers:
       - image: ucreativaregistryclase10.azurecr.io/holatest:1.0.0
         name: python-service
-      nodeSelector:
-        processing: "aqui"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hola-service
+  name: otro-service
 spec:
   type: LoadBalancer
   ports: 
     - targetPort: 2000
       port: 2000
   selector: 
-     app: hola-deployment
+     app: otro-deployment
